@@ -20,7 +20,7 @@ The user : raises the problem, deletes his problem only, or puts the problem sol
 Volunteer: chooses the problem, puts the expected dates of completion, and uploads a picture after the solution
 
 ### User Stories
-MASAJD for Volunteer , 
+ 
 # Volunteer: 
 - Volunteer: A list of mosques problems is shown to him 
 - Volunteer: Choose the city and show the filter results only 
@@ -33,7 +33,7 @@ MASAJD for Volunteer ,
 
 
 
-MASAJD for user , 
+ 
 # user :
 - User: Choose to raise the problem 
 - User: login name, phone number, password to use 
@@ -45,5 +45,6 @@ MASAJD for user ,
 - User: The user can send the problem again 
 - User: can a post image and add comments 
 
+#
 
 https://share.proto.io/JYS57A/
