@@ -8,4 +8,4 @@ class problem (models.Model):
     location = PlainLocationField(based_fields=['city'], zoom=7)
     PhoneNum= models.IntegerField()
     Description =models.TextField()
-    #image = models.ImageField(upload_to="images/") 
+    image = models.ImageField(upload_to="images/") 

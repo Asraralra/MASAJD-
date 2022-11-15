@@ -130,6 +130,8 @@ LOCATION_FIELD = {
     'provider.google.api_libraries': '',
     'provider.google.map.type': 'ROADMAP',
 }
-#LOCATION_FIELD = {
-#    'search.provider': 'google',
-#}
+
+LOCATION_FIELD = {
+   'search.provider': 'google',
+}
+
