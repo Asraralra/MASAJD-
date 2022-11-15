@@ -1,0 +1,21 @@
+{% extends 'masajdApp/base.html' %}
+
+{% block title %} Add New problem {% endblock %}
+
+
+{% block content %}
+  <h1>Add New Post</h1>
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label  class="form-label">mosque_name</label>
+        <input type="text" class="form-control" name="mosque_name">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">mosque_name</label>
+        <input type="text" class="form-control" name="mosque_name">
+    </div>
+
+
+{% endblock %}
