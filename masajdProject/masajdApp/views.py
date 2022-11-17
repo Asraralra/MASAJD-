@@ -25,15 +25,11 @@ def add_problem (request : HttpRequest):
 
     return render(request, "masajdApp/add_problem.html", {"problem" : problem, "problemForm": ProblemForm()})
 
+
+
 def all_problems (request: HttpRequest):
-
-
-    if "search" in request.GET:
-        problem = problem.objects.filter(title__contains=request.GET["search"])
-    else:
-        problem  = problem.objects.all() 
-        
-    return render(request, "masajdApp/view_problems.html", {"problems" : problems})
+   problems = problem.objects.all()
+   return render(request, "masajdApp/view_problems.html" , {"problems": problems})
 
 
 
@@ -46,5 +42,41 @@ def problem_detail(request : HttpRequest, problem_id : int):
 
     return render(request, "masajdApp/problem_detail.html", {"problem" : problem })
 
+
+
+def update_problem (request: HttpRequest, post_id:int):
+
+    try:
+        post = Post.objects.get(id=post_id)
+    except:
+        return render(request , "masajdApp/not_found.html")
+
+    if request.method== "Post":
+       problem.mosque_name= request.POST["mosque_name"]
+       problem.city = request.POST["city"]
+       problem.location=request.POST["location"]
+       problem.PhoneNum= request.POST["PhoneNum"]
+       problem.Description=request.POST["Description"]
+       problem.image= request.FILES["image"] 
+       problem.save()
+
+       return redirect("masajdApp:all_problems")
+
+    
+    return render(request, "masajdApp/update_problem.html", {"problem" : problem})
+
+
+
+
+def delete_problem (request: HttpRequest, problem_id :int):
+
+    try:
+        post = problem.objects.get(id= problem_id)
+    except:
+        return render(request , "masajdApp/not_found.html")
+
+    problem.delete() 
+
+    return redirect("masajdApp:all_problems")
 
 

@@ -1,0 +1,42 @@
+{% extends 'masajdApp/base.html' %}
+
+{% block title %} Update  {% endblock %}
+
+{% block content %}
+    <h1>Update {{  problem.mosque_name }}</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label  class="form-label">mosque_name</label>
+            <input type="text" class="form-control" name="mosque_name" value="{{ problem.mosque_name }}">
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label">Description</label>
+            <textarea type="text" class="form-control" name="Description">{{ problem.Description }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label">City </label>
+            <input type="datetime-local" class="form-control" name="city" value="{{ problem.city }}" />
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label">location</label>
+            <input type="text" class="form-control" name="location">
+        </div>
+
+        <div class="mb-3">
+                <label  class="form-label"> PhoneNum</label>
+                <input type="text" class="form-control" name="PhoneNum">
+        </div>   
+
+        <div class="mb-3"> 
+            <label  class="form-label">Post Image</label>
+                <input type="file" name="image" accept="image/*" class="form-control" />
+             </div>        
+        
+        <input class="btn btn-primary" type="submit" value="Update " />
+    </form>
+{% endblock %}
