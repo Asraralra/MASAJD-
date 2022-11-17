@@ -1,0 +1,18 @@
+{% extends "masajdApp/base.html" %}
+
+{% block title %} {{ problem.mosque_name }} {% endblock %}
+
+
+{% block content %}
+  <h1>{{ problem.mosque_name }}</h1>
+     <div class="container">
+      <p>{{ problem.city}}</p>
+      <img src="{{ problem.image.url }}"  class="w-100"/>
+      <div>
+        {{ problem.Description }}
+      </div>
+    </div>
+
+ <hr/>
+
+{% endblock %}

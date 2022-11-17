@@ -1,0 +1,36 @@
+{% extends 'masajdApp/base.html' %}
+
+{% block title %} hh {% endblock %}
+
+
+
+
+{% block content %}
+
+<h1> problem </h1>
+
+{% if "search" in request.GET %}
+    <h2> Search results for "{{ request.GET.search }}": </h2>
+{% endif %}
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr> 
+            <th scope="col">mosque_name </th>
+            <th scope="col">city</th>
+            <th scope="col">Description</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            {% for problem in problems %}
+                <th scope="row"><a href="{% url 'masajdApp:problem_detail' problem.id %}">{{problem.mosque_name}}</a></th>
+                <td>{{ problem.Description}}</td>
+                <td>{{ problem.mosque_name }}</td>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
