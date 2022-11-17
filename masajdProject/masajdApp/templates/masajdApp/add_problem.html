@@ -1,4 +1,6 @@
+
 {% extends 'masajdApp/base.html' %}
+
 
 {% block title %} Add New problem {% endblock %}
 
@@ -12,6 +14,12 @@
         <label  class="form-label">mosque_name</label>
         <input type="text" class="form-control" name="mosque_name">
     </div>
+
+    <div class="mb-3">
+        <label  class="form-label">Description</label>
+        <textarea type="text" class="form-control" name="Description "></textarea>
+    </div>
+
     <div class="mb-3">
         <label  class="form-label">city</label>
         <input type="text" class="form-control" name="city">
@@ -26,13 +34,10 @@
         <input type="text" class="form-control" name="PhoneNum">
     </div>
 
-    <div class="mb-3">
-        <label  class="form-label">Description</label>
-        <textarea type="text" class="form-control" name="Description "></textarea>
-    </div>
+    
     
     <div class="mb-3"> 
-    <label  class="form-label">Post Image</label>
+    <label  class="form-label"> Image</label>
         <input type="file" name="image" accept="image/*" class="form-control" />
      </div>
 

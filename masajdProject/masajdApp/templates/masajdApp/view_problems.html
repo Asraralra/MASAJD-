@@ -1,3 +1,4 @@
+
 {% extends 'masajdApp/base.html' %}
 
 {% block title %} all problem {% endblock %}
@@ -14,16 +15,20 @@
         <tr> 
             <th scope="col">mosque_name </th>
             <th scope="col">city</th>
+            <th scope="col">Location</th>
             <th scope="col">Description</th>
+            <th scope="col">Edit</th>
             
         </tr>
         </thead>
         <tbody>
-            {% for problem in problems %}
+            {%for problem in problems%}
             <tr>
                 <th scope="row"><a href="{% url 'masajdApp:problem_detail' problem.id %}">{{problem.mosque_name}}</a></th>
+                <td>{{ problem.city}}</td>
+                <td>{{ problem.location}}</td>
                 <td>{{ problem.Description}}</td>
-                <td>{{ problem.mosque_name }}</td>
+                
                 <td>
 
                     <div class="dropdown">
@@ -31,14 +36,14 @@
                           Edit
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'masajdApp:update_problem' problem.id %}">Update</a></li>
-                          <li><a class="dropdown-item" href="{% url 'masajdApp:delete_problem' problem.id %}">Delete</a></li>
+                          <li><a class="dropdown-item" href="{% url 'masajdApp:update_problem ' problem.id %}">Update</a></li>
+                          <li><a class="dropdown-item" href="{% url 'masajdApp:delete_problem ' problem.id %}">Delete</a></li>
                         </ul>
                       </div>
 
                 </td>
             </tr>
-            {% endfor %}
+             {% endfor %}
 
         </tbody>
     </table>

@@ -4,16 +4,18 @@
 
 
 {% block content %}
-
-  <h1>{{ problem.mosque_name }}</h1>
-     <div class="container">
-      <p>{{ problem.city}}</p>
-      <img src="{{ problem.image.url }}"  class="w-100"/>
-      <div>
-        {{ problem.Description }}
-      </div>
+<h1>{{ problem.mosque_name }}</h1>
+<div class="container">
+    <p>{{problem.city}}</p>
+    <p>{{problem.location}}</p>
+    <p>{{problem.PhoneNum}}</p>
+    
+    <img src="{{problem.images.url }}"  class="w-100"/>
+    <div>
+        {{problem.Description}}
     </div>
-
- <hr/>
+</div>
 
 {% endblock %}
+
+   

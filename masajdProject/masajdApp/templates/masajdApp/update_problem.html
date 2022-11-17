@@ -1,3 +1,4 @@
+
 {% extends 'masajdApp/base.html' %}
 
 {% block title %} Update  {% endblock %}
@@ -19,22 +20,22 @@
 
         <div class="mb-3">
             <label  class="form-label">City </label>
-            <input type="datetime-local" class="form-control" name="city" value="{{ problem.city }}" />
+            <input type="text" class="form-control" name="city" value="{{ problem.city }}" />
         </div>
 
         <div class="mb-3">
             <label  class="form-label">location</label>
-            <input type="text" class="form-control" name="location">
+            <input type="text" class="form-control" name="location" value="{{ problem.location }}">
         </div>
 
         <div class="mb-3">
                 <label  class="form-label"> PhoneNum</label>
-                <input type="text" class="form-control" name="PhoneNum">
+                <input type="text" class="form-control" name="PhoneNum" value="{{ problem.PhoneNum}}">
         </div>   
 
         <div class="mb-3"> 
             <label  class="form-label">Post Image</label>
-                <input type="file" name="image" accept="image/*" class="form-control" />
+                <input type="file" name="image" accept="image/*" class="form-control" value="{{ problem.image}}" />
              </div>        
         
         <input class="btn btn-primary" type="submit" value="Update " />

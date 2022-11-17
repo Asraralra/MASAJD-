@@ -29,29 +29,30 @@ def add_problem (request : HttpRequest):
 
 def all_problems (request: HttpRequest):
    problems = problem.objects.all()
+
    return render(request, "masajdApp/view_problems.html" , {"problems": problems})
 
 
 
 def problem_detail(request : HttpRequest, problem_id : int):
-
+  return render(request, "masajdApp/problem_detail.html", {"problem" : problem })
+'''
     try:
         problem = problem.objects.get(id= problem_id )
     except:
         return render(request , "masajdApp/not_found.html")
-
-    return render(request, "masajdApp/problem_detail.html", {"problem" : problem })
-
+        '''
 
 
-def update_problem (request: HttpRequest, post_id:int):
+
+def update_problem (request: HttpRequest, problem_id:int):
 
     try:
-        post = Post.objects.get(id=post_id)
+        post = problem.objects.get(id=problem_id)
     except:
         return render(request , "masajdApp/not_found.html")
 
-    if request.method== "Post":
+    if request.method== "POST":
        problem.mosque_name= request.POST["mosque_name"]
        problem.city = request.POST["city"]
        problem.location=request.POST["location"]
@@ -70,11 +71,12 @@ def update_problem (request: HttpRequest, post_id:int):
 
 def delete_problem (request: HttpRequest, problem_id :int):
 
+
     try:
         post = problem.objects.get(id= problem_id)
     except:
         return render(request , "masajdApp/not_found.html")
-
+        
     problem.delete() 
 
     return redirect("masajdApp:all_problems")
